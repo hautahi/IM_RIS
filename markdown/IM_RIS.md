@@ -2,6 +2,7 @@
 <!---
 layout: post
 title: Influence Maximization in Python - Reverse Influence Sampling
+mathjax: true
 tags: 
 - Python
 - Network Analysis
@@ -299,7 +300,7 @@ df = pd.DataFrame({'source': source_nodes,'target': target_nodes})
 
 # Plot graph
 G.es["color"], G.vs["color"] = "#B3CDE3", "#FBB4AE"
-plot(G,bbox = (300, 300),margin = 12,layout=G.layout("kk"))
+plot(G,bbox = (280, 280),margin = 11,layout=G.layout("kk"))
 ```
 
 
@@ -385,9 +386,9 @@ The speed comparison above showed how each algorithm scales with respect to the 
 
 
 ```python
-CELF_TIME, RIS_TIME = [], []
+CELF_TIME, RIS_TIME, SIZES = [], [], [10,50,100,500,750,1000]
 
-for n in [10,50,100,500,750,1000]:
+for n in SIZES:
     
     # Generate Graph
     G = Graph.Barabasi(n=n,m=3,directed=True)
@@ -431,3 +432,5 @@ We implemented both the CELF and RIS algorithms as simple Python functions and s
 
 - Both algorithms result in similar seed sets and influence spread.
 - The RIS algorithm runs a lot faster and scales much better with network size and seed set size.
+
+The source code for this post is available at its [Github repository](https://github.com/hautahi/IM_RIS).
