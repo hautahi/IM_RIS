@@ -11777,14 +11777,13 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <!---
 layout: post
-title: Influence Maximization in Python - Reverse Influence Sampling
-mathjax: true
+title: Reverse Influence Sampling for Influence Maximization
 tags: 
 - Python
 - Network Analysis
 --->
 
-<center> <h1>Influence Maximization in Python - Reverse Influence Sampling</h1> </center>
+<center> <h1>Reverse Influence Sampling for Influence Maximization</h1> </center>
 </div>
 </div>
 </div>
@@ -11792,7 +11791,7 @@ tags:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The influence maximization (IM) problem seeks a set of seed nodes in a network to maximize the expected number of nodes activated via an influence cascade initiated at that seed set. A <a href="http://hautahi.com/im_greedycelf">previous post</a> compared two IM algorithms - the Greedy algorithm of <a href="https://www.cs.cornell.edu/home/kleinber/kdd03-inf.pdf">Kempe et al. (2003)</a> and the CELF algorithm of <a href="https://www.cs.cmu.edu/~jure/pubs/detect-kdd07.pdf">Leskovec et al. (2007)</a>. For years, CELF (and its modified CELF++ version by <a href="https://www.cs.ubc.ca/~goyal/research/celf++.pdf">Goyal et al. 2011</a>) represented the fastest theoretically guaranteed IM algorithms, and the subsequent literature focussed largely on improving computational efficiency through the use of heuristics that sacrificed theoretical guarantees in favor of speed. More recently, however, a new approach to the problem - known as <em>Reverse Influence Sampling</em> (RIS) - has emerged which is both fast and theoretically guaranteed, and is now one of the state-of-the-art in IM methods. This post walks through an implementation of the RIS algorithm in Python and compares its solutions and computational speed to the CELF algorithm from the <a href="https://hautahi.com/im_greedycelf">previous post</a>.</p>
+<p>The influence maximization (IM) problem seeks a set of seed nodes in a network to maximize the expected number of nodes activated via an influence cascade initiated at that seed set. A <a href="http://hautahi.com/im_greedycelf">previous post</a> compared two IM algorithms - the Greedy algorithm of <a href="https://www.cs.cornell.edu/home/kleinber/kdd03-inf.pdf">Kempe et al. (2003)</a> and the CELF algorithm of <a href="https://www.cs.cmu.edu/~jure/pubs/detect-kdd07.pdf">Leskovec et al. (2007)</a>. For years, CELF (and its modified CELF++ version by <a href="https://www.cs.ubc.ca/~goyal/research/celf++.pdf">Goyal et al. 2011</a>) represented the fastest theoretically guaranteed IM algorithms, and the subsequent literature focussed largely on improving computational efficiency with heuristics that sacrificed theoretical guarantees in favor of speed. More recently, however, a new approach to the problem - <em>Reverse Influence Sampling</em> (RIS) - has emerged which is both fast and theoretically guaranteed, and is now one of the state-of-the-art in IM methods. This post walks through an implementation of the RIS algorithm in Python and compares its solutions and computational speed to the CELF algorithm from the <a href="https://hautahi.com/im_greedycelf">previous post</a>.</p>
 
 </div>
 </div>
@@ -13287,7 +13286,6 @@ RIS Spread:  13.3285
 <li>Both algorithms result in similar seed sets and influence spread.</li>
 <li>The RIS algorithm runs a lot faster and scales much better with network size and seed set size.</li>
 </ul>
-<p>The source code for this post is available at its <a href="https://github.com/hautahi/IM_RIS">Github repository</a>.</p>
 
 </div>
 </div>
